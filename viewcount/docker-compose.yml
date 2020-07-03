@@ -1,0 +1,10 @@
+version: '3' # version of docker compose 
+services: 
+    redis-server:
+        image: 'redis'
+    node-app:
+        restart: on-failure 
+        build: . # look in current dir for build 
+        ports:
+            - "4001:8081"
+
